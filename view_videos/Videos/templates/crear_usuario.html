@@ -1,0 +1,23 @@
+{% extends "master.html" %}
+{% block title %}
+    Crea tu usuario
+{% endblock %}
+
+
+{% block content %}
+
+<div style="background-color: #f0f0f0; padding: 20px; border-radius: 10px; width: 300px; margin: auto;">
+
+    <h1 style="color: #333; text-align: center;">Ingresa los datos del usuario</h1>
+
+    <form method="post" style="background-color: white; padding: 15px; border: 1px solid #ddd; border-radius: 5px;">
+        {% csrf_token %}
+        <div style="margin-bottom: 15px;">{{ formuser.as_p }}</div>
+        <button type="submit" style="background-color: green; color: white; padding: 10px 15px; border: none; cursor: pointer; width: 100%; border-radius: 5px;">crear contacto</button>
+    </form>
+    <p style="text-align: center; margin-top: 30px; font-size: 16px;">Back to <a href="/" style="color: #007bff; text-decoration: none;">Home</a></p>
+</div>
+
+
+
+{% endblock %}

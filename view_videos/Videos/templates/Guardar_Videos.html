@@ -1,0 +1,42 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Guardar Videos
+{% endblock %}
+
+{% block content %}
+
+<div style="background-color: #e6e6e6; padding: 20px; border-radius: 8px;">
+
+    <h1 style="color: #4a4a4a; text-align: center;">Aqui podrás ver tus videos subidos!!!!</h1>
+
+    <p style="font-size: 16px; text-align: center;">Registra tus videos <a href="/video_register" style="color: #007bff; text-decoration: none;">Aqui</a></p>
+
+    <ul style="list-style: none; padding: 0; margin-top: 20px;">
+    {% for Guardar_Videos in videos_guardados %}
+        <li style="background-color: #f2f2f2; margin-bottom: 10px; padding: 10px; border-radius: 5px; display: flex; justify-content: space-between;">
+    <div style="flex: 1;">
+        <strong>ID:</strong> {{ Guardar_Videos.id_del_video }}
+    </div>
+    <div style="flex: 2;">
+        <strong>Nombre:</strong> {{ Guardar_Videos.video_name }}
+    </div>
+    <div style="flex: 1;">
+        <strong>Extensión:</strong> {{ Guardar_Videos.extension }}
+    </div>
+    <div style="flex: 1;">
+        <strong>Tamaño:</strong> {{ Guardar_Videos.size }}
+    </div>
+        </li>
+
+    {% endfor %}
+    </ul>
+
+    <p style="text-align: center; margin-top: 30px; font-size: 16px;">Back to <a href="/videos" style="color: #007bff; text-decoration: none;">Usuarios</a></p>
+    <p style="font-size: 16px;">Back to <a href="/" style="color: #007bff; text-decoration: none;">Home</a></p>
+
+</div>
+
+
+
+{% endblock %}

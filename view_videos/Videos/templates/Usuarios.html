@@ -1,0 +1,30 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Usuarios Registrados
+{% endblock %}
+
+{% block content %}
+
+<div style="background-color: #f5f5f5; padding: 20px; border-radius: 10px;">
+
+    <h1 style="color: #333; text-align: center;">Usuarios_Pro_Gol_Watch</h1>
+
+    <p style="font-size: 16px;">Ingresa <a href="videos_guardados/" style="color: #007bff; text-decoration: none;">aquí</a> para ver tus videos </p>
+
+    <ul style="list-style-type: none; padding: 0;">
+    {% for Videos in usuarios %}
+        <li style="padding: 5px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between;">
+    <li style="padding: 5px; border-bottom: 1px solid #ddd; display: flex; align-items: center;">
+    <div style="flex: 1; text-align: left;">{{ Videos.name }}</div>
+    <div style="flex: 1; text-align: right;">{{ Videos.nomina }}</div>
+    </li>
+
+        </li>
+
+    {% endfor %}
+    </ul>
+<p style="font-size: 16px;">Back to <a href="/" style="color: #007bff; text-decoration: none;">Home</a></p>
+</div>
+
+{% endblock %}

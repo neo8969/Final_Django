@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+{% block title %}
+    Registra tu video
+{% endblock %}
+
+
+{% block content %}
+
+<div style="background-color: #f0f0f0; padding: 20px;">
+
+    <h1 style="color: blue; text-align: center;">Ingresa los datos del video</h1>
+
+    <form method="post" style="background-color: white; padding: 15px; border: 1px solid #ddd;">
+        {% csrf_token %}
+        {{ formvideos.as_p }}
+        <button type="submit" style="background-color: green; color: white; padding: 10px 15px; border: none; cursor: pointer;">Crear Video</button>
+    </form>
+    <p style="text-align: center; margin-top: 30px; font-size: 16px;">Back to <a href="/" style="color: #007bff; text-decoration: none;">Home</a></p>
+</div>
+
+{% endblock %}
